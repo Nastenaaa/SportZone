@@ -1,0 +1,124 @@
+/*базові змінні*/
+:root{
+  --gap:10px;
+  --radius:10px;
+  --shadow:0 2px 10px rgba(0,0,0,.06);
+  --blue:#cfe1ff;
+  --peach:#ffe1cf;
+  --green:#e6f1d7;
+  --ink:#1f2937;
+  --link:#234fa8;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font:16px/1.6 "Segoe UI",system-ui,Arial;
+  color:var(--ink);
+  background:#f4f6fb;
+}
+
+/* сітка*/
+.page{
+  width:min(980px,96vw);
+  margin:28px auto;
+  padding:var(--gap);
+  display:grid;
+  gap:var(--gap);
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: minmax(60px,auto) minmax(36px,auto) minmax(320px,1fr) auto;
+  grid-template-areas:
+    "top   top    top"
+    "left  strip  strip"
+    "left  center right"
+    "bottom bottom bottom";
+  background:#eaf0ff;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+
+/*блоки*/
+.block{
+  position:relative;
+  background:#fff;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:visible;
+}
+.bg-blue {background:var(--blue)}
+.bg-peach{background:var(--peach)}
+.bg-green{background:var(--green)}
+.bg-white{background:#fff}
+
+/* позиції + відступи */
+.area-top{
+  grid-area:top;
+  padding:12px 16px;
+  display:flex;
+  gap:12px;
+  align-items:center; 
+  flex-wrap:wrap;
+}
+.area-left  {grid-area:left;   padding:16px}
+.area-strip {grid-area:strip;  padding:10px 16px; font-weight:600}
+.area-center{grid-area:center; padding:18px; border:1px solid #d6d9e0; background:#fff}
+.area-right {grid-area:right;  padding:16px}
+
+/* Футер низ*/
+.area-bottom{
+  grid-area: bottom;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.area-bottom .content{
+  order: 1;
+  flex: 1 1 auto;         
+}
+.area-bottom .badge-y{
+  order: 2;
+  margin-left: auto;       
+  white-space: nowrap;
+  position: static;       
+}
+
+/* контент */
+.content p{margin:0 0 .7rem}
+.content p:first-child{margin-top:0}
+.content p:last-child{margin-bottom:0}
+
+/* бейджі X/Y*/
+.badge{
+  padding:6px 12px;
+  border-radius:8px;
+  background:#fff;
+  border:1px solid #c9d3e7;
+  font-weight:700;
+  color:var(--ink);
+  box-shadow:var(--shadow);
+}
+.area-top .badge-x{position:static; white-space:nowrap}
+
+/* меню*/
+.menu ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:.55rem;
+}
+.menu a{
+  display:block;
+  padding:.6rem .8rem;
+  border-radius:8px;
+  text-decoration:none;
+  background:#ffffffcc;
+  border:1px solid #dfe6f5;
+  color:var(--link);
+  font-weight:600;
+}
+.menu a:hover{background:#f0f6ff;border-color:#c7d7ff}
