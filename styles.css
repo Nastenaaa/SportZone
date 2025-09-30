@@ -122,3 +122,7 @@ body{
   font-weight:600;
 }
 .menu a:hover{background:#f0f6ff;border-color:#c7d7ff}
+/* підсвітка інтерактивних елементів редагування */
+.sz-editable { cursor:pointer; outline:1px dashed rgba(0,0,0,.12); outline-offset:2px; }
+.sz-editable:hover { outline-color:rgba(0,0,0,.35); background:rgba(255,255,0,.06); }
+
